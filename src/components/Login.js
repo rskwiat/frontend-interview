@@ -27,7 +27,7 @@ const Login = () => {
             user.password.trim() === "password"
           ) {
             setUserContext({
-              name: user.email,
+              name: 'Test User',
               ...user
             });
           } else {
@@ -37,12 +37,14 @@ const Login = () => {
       >
         <input
           name="email"
+          placeholder="Email Address"
           value={user.email}
           onChange={(e) => setUser({ ...user, email: e.target.value })}
         />
         <input
           name="password"
           type="password"
+          placeholder="Password"
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
