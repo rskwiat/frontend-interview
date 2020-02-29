@@ -25,7 +25,7 @@ import RepositorySearchResults from './RepositorySearchResults';
   input {
     width: 100%;
     font-size: 1.6rem;
-    padding: 1.2rem 2.4rem;
+    padding: 1.2rem 1.4rem;
   }
  `;
 
@@ -43,11 +43,12 @@ const Info = styled.div`
 const Repositories = () => {
 
   const [search, setSearch] = React.useState({
-    searchTerm: ''
+    searchTerm: "",
   });
 
-  const { searchTerm } = search;
-  let searchResults = searchTerm;
+  let searchResults = search.searchTerm;
+  let searchRef = React.useRef();
+
 
   return (
     <Container>
