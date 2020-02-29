@@ -21,7 +21,7 @@ const Repositories = () => {
       {searchResults ? (
         <RepositorySearchResults searchResults={searchResults} />
       ) : (
-        <div>Enter somee test to search github repositories</div>
+        <div>Enter some test to search github repositories</div>
       )}
     </div>
   );

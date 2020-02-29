@@ -5,6 +5,7 @@ import {
   PROFILE_ROUTE,
   HOME_ROUTE
 } from "../constants/routes";
+
 import styled from 'styled-components';
 
 const routes = [
@@ -22,9 +23,38 @@ const routes = [
   }
 ];
 
+const NavBar = styled.nav`
+  border-bottom: 1px solid #ccc;
+  font-size: 1.4rem;
+
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+
+      a {
+        text-decoration: none;
+        font-family: sans-serif;
+        color: #3498db;
+        padding: 1.5rem 2rem;
+        display: inline-block;
+        line-height: 1;
+        &:hover {
+          background: #3498db;
+          color: #FFF;
+        }
+      }
+    }
+  }
+
+`;
+
 const Navigation = () => {
   return (
-    <nav>
+    <NavBar>
       <ul>
         {routes.map(({ to, label }) => {
           return (
@@ -34,7 +64,7 @@ const Navigation = () => {
           );
         })}
       </ul>
-    </nav>
+    </NavBar>
   );
 };
 

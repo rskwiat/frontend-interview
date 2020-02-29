@@ -2,28 +2,35 @@ import * as React from "react";
 import { useSetUserContext } from "../contexts/user";
 import styled from 'styled-components';
 
+
+const Container = styled.div`
+  height: 100%;
+  position: relative;
+  padding: 0 2rem;
+`;
+
 const Panel = styled.div`
-  max-width: 500px;
+  max-width: 50rem;
   border: 1px solid #ccc;
   box-shadow: 0 3px 12px rgba(0,0,0,.1);
-  padding: 40px 20px;
+  padding: 4rem 2rem;
   margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, 50%);
   border-radius: 3px;
 `;
 
 const Title = styled.h1`
   font-size: 36px;
   font-family: sans-serif;
-  margin: 0 0 20px;
+  margin: 0 0 2rem;
 `;
 
 const Fieldset = styled.fieldset`
@@ -34,14 +41,14 @@ const Fieldset = styled.fieldset`
 
   label {
     font-family: sans-serif;
-    margin: 0 0 5px;
-    font-size: 14px;
+    margin: 0 0 .5rem;
+    font-size: 1.4rem;
   }
 
   input {
-    font-size: 16px;
-    padding: 2px 5px;
-    margin: 0 0 20px;
+    font-size: 1.6rem;
+    padding: .2rem .5rem;
+    margin: 0 0 2rem;
   }
 `;
 
@@ -50,17 +57,15 @@ const Button = styled.button`
   width: 100%;
   background: #3498db;
   color: #fff;
-  font-size: 14px;
-  border-radius: 3px;
+  font-size: 1.4rem;
+  border-radius: .3rem;
   display: inline-block;
-  padding: 12px 24px;
+  padding: 1.2rem 2.4rem;
   cursor: pointer;
   transition: color 450ms ease-in-out;
-
   &:hover {
     background: #2980b9;
   }
-
 `;
 
 const Login = () => {
@@ -76,7 +81,7 @@ const Login = () => {
   
   const setUserContext = useSetUserContext();
   return (
-    <>
+    <Container>
       <Panel>
       <Title>Login</Title>
       {error && <p>Error: {error}</p>}
@@ -121,7 +126,7 @@ const Login = () => {
         <Button type="submit">Login</Button>
       </form>
       </Panel>
-    </>
+    </Container>
   );
 };
 
