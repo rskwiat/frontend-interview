@@ -1,7 +1,8 @@
 import * as React from "react";
-import { useUserContext, useSetUserContext } from "../contexts/user";
+import { withRouter } from 'react-router-dom';
 
-const Profile = () => {
+import { useUserContext, useSetUserContext } from "../contexts/user";
+const Profile = (props) => {
   const user = useUserContext();
   const setUser = useSetUserContext();
 
@@ -11,6 +12,7 @@ const Profile = () => {
       <form
         onSubmit={e => {
           e.preventDefault();
+          props.history.push("/");
         }}
       >
         <input
@@ -31,4 +33,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default withRouter(Profile);
