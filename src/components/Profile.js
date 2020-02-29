@@ -1,7 +1,7 @@
 import * as React from "react";
 import { withRouter } from 'react-router-dom';
-
 import { useUserContext, useSetUserContext } from "../contexts/user";
+
 const Profile = (props) => {
   const user = useUserContext();
   const setUser = useSetUserContext();

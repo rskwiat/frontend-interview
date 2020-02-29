@@ -5,6 +5,7 @@ import {
   PROFILE_ROUTE,
   HOME_ROUTE
 } from "../constants/routes";
+import styled from 'styled-components';
 
 const routes = [
   {
@@ -36,5 +37,6 @@ const Navigation = () => {
     </nav>
   );
 };
+
 
 export default Navigation;
